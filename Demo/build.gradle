@@ -1,7 +1,9 @@
 apply plugin: 'com.android.application'
+
 android {
     compileSdkVersion 28
     defaultConfig {
+        namespace 'com.aigestudio.wheelpicker.demo'
         applicationId "com.aigestudio.wheelpicker.demo"
         minSdkVersion 14
         targetSdkVersion 28
@@ -15,6 +17,7 @@ android {
         }
     }
 }
+
 dependencies {
-    implementation project(':WheelPicker')
+    implementation project(':WheelPicker') // Reference to the local WheelPicker module
 }

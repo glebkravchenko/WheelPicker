@@ -1,5 +1,6 @@
 package com.aigestudio.wheelpicker.demo;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,16 +47,12 @@ public class PreviewActivity extends Activity implements WheelPicker.OnItemSelec
     @Override
     public void onItemSelected(WheelPicker picker, Object data, int position) {
         String text = "";
-        switch (picker.getId()) {
-            case R.id.main_wheel_left:
-                text = "Left:";
-                break;
-            case R.id.main_wheel_center:
-                text = "Center:";
-                break;
-            case R.id.main_wheel_right:
-                text = "Right:";
-                break;
+        if (picker.getId() == R.id.main_wheel_left) {
+            text = "Left:";
+        } else if (picker.getId() == R.id.main_wheel_center) {
+            text = "Center:";
+        } else if (picker.getId() == R.id.main_wheel_right) {
+            text = "Right:";
         }
         Toast.makeText(this, text + String.valueOf(data), Toast.LENGTH_SHORT).show();
     }
